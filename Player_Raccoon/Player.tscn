@@ -1,0 +1,251 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Player_Raccoon/Limp_Walk.tres" type="Animation" id=1]
+[ext_resource path="res://Player_Raccoon/Jump_Fall.tres" type="Animation" id=2]
+[ext_resource path="res://Player_Raccoon/Hidden.tres" type="Animation" id=3]
+[ext_resource path="res://Player_Raccoon/Jump_Launch.tres" type="Animation" id=4]
+[ext_resource path="res://Player_Raccoon/Fall.tres" type="Animation" id=5]
+[ext_resource path="res://Player_Raccoon/Fall_Death.tres" type="Animation" id=6]
+[ext_resource path="res://Player_Raccoon/Poisoned.tres" type="Animation" id=7]
+[ext_resource path="res://Player_Raccoon/Sleep.tres" type="Animation" id=8]
+[ext_resource path="res://Player_Raccoon/Climb.tres" type="Animation" id=9]
+[ext_resource path="res://Player_Raccoon/Crawl.tres" type="Animation" id=10]
+[ext_resource path="res://Player_Raccoon/Eating.tres" type="Animation" id=11]
+[ext_resource path="res://Player_Raccoon/Hidden_T.tres" type="Animation" id=12]
+[ext_resource path="res://Player_Raccoon/Death.tres" type="Animation" id=13]
+[ext_resource path="res://Player_Raccoon/Jump_Land.tres" type="Animation" id=14]
+[ext_resource path="res://Player_Raccoon/Jump_Still.tres" type="Animation" id=15]
+[ext_resource path="res://Player_Raccoon/CLIMBDTC.gd" type="Script" id=16]
+[ext_resource path="res://Player_Raccoon/Player.png" type="Texture" id=17]
+[ext_resource path="res://Player_Raccoon/Climb_Idle.tres" type="Animation" id=18]
+[ext_resource path="res://Player_Raccoon/Jump.tres" type="Animation" id=19]
+[ext_resource path="res://Player_Raccoon/Climb_Up.tres" type="Animation" id=20]
+[ext_resource path="res://Player_Raccoon/View.tres" type="Animation" id=21]
+[ext_resource path="res://Player_Raccoon/Push.tres" type="Animation" id=22]
+[ext_resource path="res://Player_Raccoon/Limp_Idle.tres" type="Animation" id=23]
+[ext_resource path="res://Player_Raccoon/View_T.tres" type="Animation" id=24]
+[ext_resource path="res://Player_Raccoon/Idle.tres" type="Animation" id=25]
+[ext_resource path="res://Player_Raccoon/Attack_View.tres" type="Animation" id=26]
+[ext_resource path="res://Player_Raccoon/Running.tres" type="Animation" id=27]
+[ext_resource path="res://Player_Raccoon/Walk.tres" type="Animation" id=28]
+[ext_resource path="res://Player_Raccoon/Player.gd" type="Script" id=29]
+[ext_resource path="res://Player_Raccoon/Climb_Down.tres" type="Animation" id=30]
+[ext_resource path="res://Player_Raccoon/Climb_Right.tres" type="Animation" id=31]
+[ext_resource path="res://TEST.tres" type="Animation" id=32]
+[ext_resource path="res://Player_Raccoon/Fall_Damage_Flash.tres" type="Animation" id=33]
+[ext_resource path="res://Player_Raccoon/Fall_Damage_Red.tres" type="Animation" id=34]
+[ext_resource path="res://Player_Raccoon/Animation_Reset.tres" type="Animation" id=35]
+[ext_resource path="res://Player_Raccoon/Climb_Up_New.tres" type="Animation" id=36]
+[ext_resource path="res://Player_Raccoon/Climb_Down_New.tres" type="Animation" id=37]
+[ext_resource path="res://Player_Raccoon/Climb_Right_New.tres" type="Animation" id=38]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -12, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 8.99998
+height = 7.5
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6, 0.5 )
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5, -16 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 11.5, 0.75 )
+
+[node name="PlayerAnimated" type="KinematicBody2D"]
+script = ExtResource( 29 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/Animation_Reset = ExtResource( 35 )
+anims/Attack_View = ExtResource( 26 )
+anims/Climb = ExtResource( 9 )
+"anims/Climb (copy)" = ExtResource( 9 )
+anims/Climb_Down = ExtResource( 30 )
+"anims/Climb_Down (copy)" = ExtResource( 31 )
+anims/Climb_Down_New = ExtResource( 37 )
+anims/Climb_Idle = ExtResource( 18 )
+anims/Climb_Left = ExtResource( 32 )
+anims/Climb_Right = ExtResource( 31 )
+anims/Climb_Right_New = ExtResource( 38 )
+anims/Climb_Up = ExtResource( 20 )
+"anims/Climb_Up (copy)" = ExtResource( 32 )
+anims/Climb_Up_New = ExtResource( 36 )
+anims/Crawl = ExtResource( 10 )
+anims/Death = ExtResource( 13 )
+anims/Eating = ExtResource( 11 )
+anims/Fall = ExtResource( 5 )
+anims/Fall_Damage = ExtResource( 34 )
+anims/Fall_Damage_Flash = ExtResource( 33 )
+anims/Fall_Damage_Red = ExtResource( 34 )
+anims/Fall_Death = ExtResource( 6 )
+anims/Hidden = ExtResource( 3 )
+anims/Hidden_T = ExtResource( 12 )
+anims/Idle = ExtResource( 25 )
+anims/Jump = ExtResource( 19 )
+anims/Jump_Fall = ExtResource( 2 )
+anims/Jump_Land = ExtResource( 14 )
+anims/Jump_Launch = ExtResource( 4 )
+anims/Jump_Still = ExtResource( 15 )
+anims/Limp_Idle = ExtResource( 23 )
+anims/Limp_Walk = ExtResource( 1 )
+anims/Poisoned = ExtResource( 7 )
+anims/Push = ExtResource( 22 )
+anims/RESET = SubResource( 2 )
+anims/Running = ExtResource( 27 )
+anims/Sleep = ExtResource( 8 )
+anims/View = ExtResource( 21 )
+anims/View_T = ExtResource( 24 )
+anims/Walk = ExtResource( 28 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 17 )
+offset = Vector2( -5, -16 )
+hframes = 33
+vframes = 25
+frame = 1
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite"]
+position = Vector2( 0, 1 )
+enabled = true
+cast_to = Vector2( 0, 11 )
+collision_mask = 32784
+collide_with_areas = true
+
+[node name="GroundDTC" type="CollisionShape2D" parent="." groups=["GroundDTC"]]
+self_modulate = Color( 0.592157, 0.592157, 0.592157, 0.411765 )
+position = Vector2( 3, -9 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Node2D" type="Node2D" parent="Camera2D"]
+
+[node name="CLIMBDTC" type="Area2D" parent="." groups=["AllwaysDTC"]]
+position = Vector2( 7, 0 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 16 )
+
+[node name="ClimbDTC" type="CollisionShape2D" parent="CLIMBDTC"]
+self_modulate = Color( 0.188235, 0.188235, 0.188235, 1 )
+position = Vector2( -4, -0.5 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/Animation_Reset = ExtResource( 35 )
+anims/Climb_Down = ExtResource( 30 )
+anims/Climb_Down_New = ExtResource( 37 )
+anims/Climb_Up = ExtResource( 20 )
+anims/Climb_Up_New = ExtResource( 36 )
+anims/Fall_Damage_Flash = ExtResource( 33 )
+anims/Fall_Damage_Red = ExtResource( 34 )
+anims/RESET = SubResource( 6 )
+anims/Walk = ExtResource( 28 )
+
+[node name="AllowState" type="Timer" parent="."]
+wait_time = 0.68
+one_shot = true
+
+[node name="OpenDirDTC" type="Area2D" parent="."]
+
+[node name="OpenDirDTC" type="CollisionShape2D" parent="OpenDirDTC"]
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 3, -11 )
+shape = SubResource( 7 )
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="timeout" from="AllowState" to="." method="_on_AllowState_timeout"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
